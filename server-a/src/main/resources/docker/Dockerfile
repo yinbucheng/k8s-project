@@ -1,18 +1,18 @@
 #基础镜像
-FROM  intellif.io/ci/alpine-oraclejdk8:0.2
+FROM  java:8
 
   #维护人
 MAINTAINER   yinchong
   #RUN ["/bin/sh","-c","mkdir -p /opt/logs"]
 RUN mkdir -p /opt/logs
   #RUN
-COPY ./lib/ /opt/ifaas-trace-server/lib/
+#COPY ./lib/ /opt/ifaas-trace-server/lib/
   #add file
-COPY api.jar /opt/ifaas-trace-server/
-COPY start.sh /opt/ifaas-trace-server/
+COPY server-a.jar /opt/server-a/
+COPY start.sh /opt/server-a/
   #port
-EXPOSE 9411
+EXPOSE 9191
 
-WORKDIR /opt/ifaas-trace-server
+WORKDIR /opt/server-a
   #CMD
 ENTRYPOINT ["./start.sh"]
