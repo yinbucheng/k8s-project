@@ -25,7 +25,7 @@ public class ServerBController {
     }
 
     @RequestMapping("trace")
-    public String trace(@RequestParam("traceId") String traceId, @RequestParam("id") String pid) {
+    public String trace(@RequestParam("traceId") String traceId, @RequestParam("pid") String pid) {
         String xid = UUID.randomUUID().toString().toLowerCase();
         log.info("server b traceId:{} ,pid:{},currentId:{}", traceId, pid, xid);
         return "server b receive trace invoke ,server b xid:" + xid;
