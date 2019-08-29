@@ -1,0 +1,56 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: server-a
+  namespace: basic-app
+  labels:
+    app: server-a
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: server-a
+  template:
+    metadata:
+      labels:
+        app: server-a
+    spec:
+      containers:
+        - image: yinbucheng/server-b:v1.0.0
+          env:
+            - name: SERVICE_NAME
+              value: server-a
+          imagePullPolicy: IfNotPresent
+          name: server-a
+          securityContext:
+            allowPrivilegeEscalation: True
+          livenessProbe:
+            failureThreshold: 5
+            initialDelaySeconds: 10
+            periodSeconds: 3
+            successThreshold: 1
+            timeoutSeconds: 5
+            tcpSocket:
+              port: 9411
+          ports:
+            - containerPort: 9411
+              protocol: TCP
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: server-a
+  namespace: basic-app
+  labels:
+    app: server-a
+spec:
+  type: NodePort
+  selector:
+    app: server-a
+  ports:
+    - name: port1    #暴露的端口一的名称
+      protocol: TCP
+      nodePort: 32411 #对外暴露的端口
+      port: 9411       #servic暴露端口
+      targetPort: 9411 #pod目标端口
