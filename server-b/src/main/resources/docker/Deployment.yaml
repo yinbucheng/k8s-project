@@ -31,9 +31,9 @@ spec:
             successThreshold: 1
             timeoutSeconds: 5
             tcpSocket:
-              port: 9411
+              port: 9291
           ports:
-            - containerPort: 9411
+            - containerPort: 9292
               protocol: TCP
 
 ---
@@ -51,6 +51,6 @@ spec:
   ports:
     - name: port1    #暴露的端口一的名称
       protocol: TCP
-      nodePort: 32411 #对外暴露的端口
-      port: 9411       #servic暴露端口
-      targetPort: 9411 #pod目标端口
+      nodePort: 32412 #对外暴露的端口
+      port: 9292       #servic暴露端口
+      targetPort: 9292 #pod目标端口
