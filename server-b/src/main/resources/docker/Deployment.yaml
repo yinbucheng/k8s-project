@@ -31,7 +31,7 @@ spec:
             successThreshold: 1
             timeoutSeconds: 5
             tcpSocket:
-              port: 9291
+              port: 9292
           ports:
             - containerPort: 9292
               protocol: TCP
