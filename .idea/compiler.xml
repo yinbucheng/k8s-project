@@ -8,7 +8,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="server-b" />
         <module name="register" />
+        <module name="zuul" />
         <module name="server-a" />
+        <module name="zipkin-server" />
       </profile>
     </annotationProcessing>
   </component>
@@ -17,6 +19,8 @@
       <module name="register" options="-parameters" />
       <module name="server-a" options="-parameters" />
       <module name="server-b" options="-parameters" />
+      <module name="zipkin-server" options="-parameters" />
+      <module name="zuul" options="-parameters" />
     </option>
   </component>
 </project>

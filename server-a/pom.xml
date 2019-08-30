@@ -27,12 +27,12 @@
             <groupId>cn.bucheng.discover</groupId>
             <artifactId>discover-core</artifactId>
             <version>2.0-SNAPSHOT</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>discover-zookeeper</artifactId>
-                    <groupId>cn.bucheng.discover</groupId>
-                </exclusion>
-            </exclusions>
+        </dependency>
+
+        <!--zipkin客户端-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
         </dependency>
     </dependencies>
 
