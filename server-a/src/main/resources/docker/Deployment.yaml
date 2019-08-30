@@ -15,6 +15,7 @@ spec:
       labels:
         app: server-a
     spec:
+      serviceAccountName: application
       containers:
         - image: yinbucheng/server-b:v1.0.0
           env:
