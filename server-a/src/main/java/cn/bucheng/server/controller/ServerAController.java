@@ -1,5 +1,7 @@
 package cn.bucheng.server.controller;
 
+import brave.propagation.TraceContext;
+import brave.propagation.TraceIdContext;
 import cn.bucheng.server.remoting.IServerB;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
