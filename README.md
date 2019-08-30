@@ -17,6 +17,9 @@
 io.fabric8.kubernetes.client.KubernetesClientException: Failure executing: GET at: https://kubernetes.default.svc/api/v1/namespaces/basic-app/endpoints/server-b. Message: Forbidden!Configured service account doesn't have access. Service account may have been revoked. endpoints "server-b" is forbidden: User "system:serviceaccount:basic-app:default" cannot get endpoints in the namespace "basic-app".
 
 解决办法：
-执行下面命令
+>>在deployment文件中的template.spec添加
+serviceAccount：application
+
+>>执行下面命令
 kubectl -n basic-app create sa application && kubectl create clusterrolebinding application --clusterrole cluster-admin --serviceaccount=basic-app:application
 ```
