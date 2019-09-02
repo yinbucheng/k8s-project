@@ -51,7 +51,8 @@ public class TokenFilter extends ZuulFilter {
      */
     @Override
     public Object run() {
-        log.info("zuul filter run,traceId");
+        String traceIdString = Tracing.currentTracer().currentSpan().context().traceIdString();
+        log.info("zuul filter run,traceId:{}", traceIdString);
         return null;
     }
 }
