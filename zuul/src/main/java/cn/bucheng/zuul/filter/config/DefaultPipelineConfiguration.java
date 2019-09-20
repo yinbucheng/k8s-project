@@ -30,6 +30,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class DefaultPipelineConfiguration {
 
+
     @Bean
     public DefaultFilterPipeline pipeline() {
         DefaultFilterPipelineBuilder builder = new DefaultFilterPipelineBuilder();
