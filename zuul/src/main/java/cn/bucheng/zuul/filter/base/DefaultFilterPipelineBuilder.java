@@ -24,10 +24,10 @@ import lombok.extern.slf4j.Slf4j;
  * @describe
  */
 @Slf4j
-public class DefaultFilterBuilderBuilder {
+public class DefaultFilterPipelineBuilder {
     private DefaultFilterPipeline pipeline = new DefaultFilterPipeline();
 
-    public DefaultFilterBuilderBuilder addLast(AbstractFilter filter) {
+    public DefaultFilterPipelineBuilder addLast(AbstractFilter filter) {
         pipeline.addLast(filter);
         return this;
     }
