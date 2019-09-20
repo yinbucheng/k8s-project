@@ -1,13 +1,11 @@
 package cn.bucheng.zuul.filter;
 
-import brave.Tracer;
 import brave.Tracing;
-import brave.propagation.TraceContext;
 import com.netflix.zuul.ZuulFilter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 @Slf4j
 public class TokenFilter extends ZuulFilter {
 
