@@ -17,7 +17,7 @@ package cn.bucheng.zuul.filter.config;
  */
 
 import cn.bucheng.zuul.filter.*;
-import cn.bucheng.zuul.filter.base.DefaultFilterBuilder;
+import cn.bucheng.zuul.filter.base.DefaultFilterBuilderBuilder;
 import cn.bucheng.zuul.filter.base.DefaultFilterPipeline;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -32,7 +32,7 @@ public class DefaultPipelineConfiguration {
 
     @Bean
     public DefaultFilterPipeline pipeline() {
-        DefaultFilterBuilder builder = new DefaultFilterBuilder();
+        DefaultFilterBuilderBuilder builder = new DefaultFilterBuilderBuilder();
         builder.addLast(new FirstPreFilter());
         builder.addLast(new EndPreFilter());
         builder.addLast(new FirstPostFilter());
